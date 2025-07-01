@@ -21,7 +21,7 @@ RUN git clone https://github.com/beefproject/beef && \
     cd beef && \
     bundle install
 
-# Set a known password in beef/config.yaml (e.g. "beef:beef")
+# Set a known password in beef/config.yaml (e.g. "beef:mybeefpasswd")
 RUN sed -i 's/^\(\s*passwd:\s*\).*$/\1"mybeefpasswd"/' beef/config.yaml
 
 # Copy example PHP files
@@ -29,8 +29,8 @@ COPY examples/ /app/examples
 
 # Expose ports:
 # - 80 for the PHP server
-# - 3000 for BeEF (default)
-EXPOSE 80 3000
+# - 3000 and 6789 for BeEF (default)
+EXPOSE 80 3000 6789
 
 # Start both PHP server and BeEF using a script
 CMD ["bash", "-c", "\

