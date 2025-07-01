@@ -24,3 +24,9 @@ inspect docker container:
 docker run -it --entrypoint /bin/bash beef-playground  
 in case any ruby gem installations are running an error, the solution is manual install.  
 e.g. gem install xmlrpc  
+  
+## More  
+### One creating modules  
+https://github.com/beefproject/beef/wiki/Module-creation  
+### Usage with Metasploit  
+https://github.com/beefproject/beef/wiki/Configuration#metasploit  
