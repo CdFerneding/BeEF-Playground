@@ -29,8 +29,8 @@ COPY examples/ /app/examples
 
 # Expose ports:
 # - 80 for the PHP server
-# - 3000 and 6789 for BeEF (default)
-EXPOSE 80 3000 6789
+# - 3000 for BeEF (default)
+EXPOSE 80 3000
 
 # Start both PHP server and BeEF using a script
 CMD ["bash", "-c", "\

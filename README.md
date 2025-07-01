@@ -1,7 +1,7 @@
 # beef playground  
 ## build docker  
 docker build -t beef-playground .  
-docker run -it -p 80:80 -p 3000:3000 -p 6789:6789 beef-playground  
+docker run -it -p 80:80 -p 3000:3000 beef-playground  
   
 ## beef server launched with  
 admin web page: http://localhost:3000/ui/panel  
